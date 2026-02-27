@@ -1,20 +1,23 @@
 class Group:
-    def __init__(self, groupName, time, location):
-        self.name = name
-        self.groupName = groupName
+    def __init__(self, groupName, subject, maxPersons, time, location):
+        self.name = groupName
+        self.subject = subject
+        self.maxPersons = maxPersons
         self.time = time
         self.location = location
-        self.users = []
+        self.personsInGroup = []
 
-    def add_user(self, user):
-        if user not in self.users:
-            self.users.append(user)
+    def addPerson(self, person):
+        if person not in self.personsInGroup:
+            self.personsInGroup.append(person)
+        else:
+            print(f"{person} is already in the group!")
 
-    def remove_user(self, user):
-        if user in self.users:
-            self.users.remove(user)
+    def removePerson(self, person):
+        if person in self.personsInGroup:
+            self.personsInGroup.remove(person)
         else: 
-            print(f"{user} is not in the group.\n")
+            print(f"{person} is not in the group.")
 
-    def get_users(self):
-        return self.users
+    def getPersons(self):
+        return self.personsInGroup

@@ -1,7 +1,7 @@
 class Person:
-    def __init__(self, name, math, zipCode, datestart, dateend):
+    def __init__(self, name, subject, zipCode, dateStart, dateEnd):
         self.name = name
-        self.math = math
+        self.math = subject
         self.zip = zipCode
-        self.datestart = datestart
-        self.dateend = dateend
+        self.dateStart = dateStart
+        self.dateEnd = dateEnd
