@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template_string
-
+import os
 app = Flask(__name__)
 
 
@@ -56,6 +56,4 @@ def home():
     return render_template_string(FORM, userInfo=userInfo)
 
 if __name__ == "__main__":
-    app.run(debug=True)
-else:
-    print("nah")
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
