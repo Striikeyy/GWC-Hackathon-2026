@@ -1,10 +1,10 @@
 class Group:
-    def __init__(self, groupName, subject, maxPersons, time, location):
+    def __init__(self, groupName, subject, maxPersons, date, zipCode):
         self.name = groupName
         self.subject = subject
         self.maxPersons = maxPersons
-        self.time = time
-        self.location = location
+        self.date = date
+        self.location = zipCode
         self.personsInGroup = []
 
     def addPerson(self, person):
