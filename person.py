@@ -6,14 +6,11 @@ class Person:
         self.dateStart = dateStart
         self.dateEnd = dateEnd
 
-    # returns a list of groups that match the person's criteria, or None if there are no matches
-    def getMatchAlgorithm(self, similarityThreshhold, temproups = []):
+    def findMatches(self, groups):
         matches = []
-        # similarity goes from 0 to 1, with 1 being a perfect match, and 0 being no match at all
-        similarity = 0
         for group in groups:
-            if self.subject == group.subject and self.zip == group.location and self.dateStart <= group.time <= self.dateEnd:
+            if (self.subject == group.subject and self.zip == group.zip and self.dateStart <= group.date <= self.dateEnd and group.maxPersons > len(group.getPersons())):
                 matches.append(group)
-        if len(matches) > 0:
+            if matches == []:
+                return None
             return matches
-        return None

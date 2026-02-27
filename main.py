@@ -17,20 +17,26 @@ def main():
     for i in range(groupCount):
         groups.append(Group(*inputGroupData(MATHCLASSES)))
         for j in range(groups[i].maxPersons):   
-            groups[i].addPerson(input("Enter the name of the person you want to add to the group: "))
-            
+            personName = input("Enter the name of the person you want to add to the group (type BLANK for blank): ")
+            if personName != "BLANK":
+                groups[i].addPerson(personName)
     
     if (input("Would you like to find a group? (Y/n): ").lower() == 'y'):
-
-        # stores the index of the groups that match 
-        # TODO
-        for group in groups:
-            print(group.name, group.subject, group.maxPersons, group.time, group.zipCode)
+        persons.append(Person(*inputPersonData(MATHCLASSES)))
+        matches = persons[-1].findMatches(groups)
+        if matches is not None:
+            print("Here are the groups that match your criteria :) :")
+            for match in matches:
+                print(match.name)
+        else:
+            print("Sorry, there are no groups that match with you :(.")
     
     if (input("Would you like to make a group? (Y/n): ").lower() == 'y'):
-        for person in persons:
-            print(person.name, person.subject, person.zipCode, person.dateStart, person.dateEnd)
-
+            groups.append(Group(*inputGroupData(MATHCLASSES)))
+            for j in range(groups[-1].maxPersons):   
+                personName = input("Enter the name of the person you want to add to the group (type BLANK for blank): ")
+                if personName != "BLANK":
+                    groups[-1].addPerson(personName)
 
     print("los tralaleritos")
 

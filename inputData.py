@@ -77,4 +77,3 @@ def getValidDate(prompt):
             return dateObject
         except ValueError:
             print("Use YYYY-MM-DD format.")
-

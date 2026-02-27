@@ -4,7 +4,7 @@ class Group:
         self.subject = subject
         self.maxPersons = maxPersons
         self.date = date
-        self.location = zipCode
+        self.zip = zipCode
         self.personsInGroup = []
 
     def addPerson(self, person):
