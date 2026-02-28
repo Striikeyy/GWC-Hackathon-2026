@@ -10,17 +10,29 @@ groups = []
 MATHCLASSES = ["algebra1", "algebra2", "geometry", "trigonometry", "precalculus", "apcalculusab", "apcalculusbc", "apstatistics"]
 
 def main():
-    personCount = int(input("How many people registered in the program? "))
-    for i in range(personCount):
-        persons.append(Person(*inputPersonData(MATHCLASSES)))
+    #personCount = int(input("How many people registered in the program? "))
+    #for i in range(personCount):
+    #    persons.append(Person(*inputPersonData(MATHCLASSES)))
     
-    groupCount = int(input("How many groups are registered in the program? "))
-    for i in range(groupCount):
-        groups.append(Group(*inputGroupData(MATHCLASSES)))
-        for j in range(groups[i].maxPersons):   
-            personName = input("Enter the name of the person you want to add to the group (type BLANK for blank): ")
-            if personName != "BLANK":
-                groups[i].addPerson(personName)
+    #groupCount = int(input("How many groups are registered in the program? "))
+    #for i in range(groupCount):
+    #    groups.append(Group(*inputGroupData(MATHCLASSES)))
+    #    for j in range(groups[i].maxPersons):   
+    #        personName = input("Enter the name of the person you want to add to the group (type BLANK for blank): ")
+    #        if personName != "BLANK":
+    #            groups[i].addPerson(personName)
+
+    persons.append(Person("Jacob", "algebra2", 90638, "2026-3-01", "2027-12-31"))
+    persons.append(Person("Tony", "geometry", 90638, "2026-4-01", "2027-12-31"))
+    
+    #groupCount = int(input("How many groups are registered in the program? "))
+    #for i in range(groupCount):
+    groups.append(Group("tonygeometry", "geometry", 5, "2026-4-15", 90638))
+    groups.append(Group("jacobalgebra2", "algebra2", 5, "2026-3-15", 90638))
+    #    for j in range(groups[i].maxPersons):   
+    #        personName = input("Enter the name of the person you want to add to the group (type BLANK for blank): ")
+    #        if personName != "BLANK":
+    #            groups[i].addPerson(personName)
     
     if (input("Would you like to find a group? (Y/n): ").lower() == 'y'):
         persons.append(Person(*getFormData()))
@@ -40,6 +52,9 @@ def main():
                     groups[-1].addPerson(personName)
 
     print("los tralaleritos")
+
+def printGroups():
+    return persons[-1].findMatches(groups)
 
 if __name__ == "__main__": 
     main()
