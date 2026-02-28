@@ -56,7 +56,8 @@ FORM = """
                         <strong>{{ group.name }}</strong> |
                         Subject: {{ group.subject }} |
                         ZIP: {{ group.zipCode }} |
-                        Start Date: {{ group.date }}
+                        Start Date: {{ group.dateStart }} |
+                        End Date: {{ group.dateEnd }}
                     </li>
                 {% endfor %}
             </ul>
