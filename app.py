@@ -64,7 +64,6 @@ FORM = """
             <p>No matching groups found.</p>
         {% endif %}
     {% endif %}
-
 </body>
 </html>
 """
@@ -88,8 +87,12 @@ def home():
 
             matches = new_person.findMatches(groups)
 
-        except ValueError:
+            print(f"Matches found: {matches}")
+
+        except ValueError as e:
             matches = []
+
+            print(f"Error with form data: {e}")
 
     return render_template_string(FORM, matches=matches)
 
