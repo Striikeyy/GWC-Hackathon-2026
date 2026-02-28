@@ -57,3 +57,9 @@ def home():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
+def getFormData():
+    userInfo = None
+    if request.method == "POST":
+        userInfo = [request.form["firstNameInput"], request.form["zipCodeInput"], request.form["subjectInput"], request.form["EarliestDateInput"], request.form["LatestDateInput"],]
+    return userInfo

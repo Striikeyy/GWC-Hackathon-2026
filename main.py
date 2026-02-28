@@ -1,3 +1,4 @@
+from app import getFormData
 from person import Person
 from group import Group
 from inputData import inputPersonData, inputGroupData
@@ -22,7 +23,7 @@ def main():
                 groups[i].addPerson(personName)
     
     if (input("Would you like to find a group? (Y/n): ").lower() == 'y'):
-        persons.append(Person(*inputPersonData(MATHCLASSES)))
+        persons.append(Person(*getFormData()))
         matches = persons[-1].findMatches(groups)
         if matches is not None:
             print("Here are the groups that match your criteria :) :")
