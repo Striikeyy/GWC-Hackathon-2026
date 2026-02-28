@@ -11,7 +11,6 @@ class Person:
     def findMatches(self, groups):
         matches = []
         print(f"Finding matches for {self.name} with Subject: {self.subject}, ZIP: {self.zipCode}, Dates: {self.dateStart} - {self.dateEnd}")
-        
         for group in groups:
             print(f"Checking group: {group.name} with Subject: {group.subject}, ZIP: {group.zipCode}, Dates: {group.dateStart} - {group.dateEnd}")
 
